@@ -1,0 +1,640 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww33400\viewh21000\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs32 \cf0 \expnd0\expndtw0\kerning0
+<!DOCTYPE html>\
+<html lang="it">\
+<head>\
+  <meta charset="UTF-8" />\
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>\
+  <title>La Stella d'Oro \'97 Dal 1834</title>\
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>\
+  <style>\
+    *, *::before, *::after \{ margin: 0; padding: 0; box-sizing: border-box; \}\
+\
+    :root \{\
+      --gold: #c9a84c;\
+      --dark: #1a1008;\
+      --cream: #fdf6ec;\
+      --red: #8b1a1a;\
+    \}\
+\
+    html \{ scroll-behavior: smooth; \}\
+\
+    body \{\
+      font-family: 'Lato', sans-serif;\
+      background: var(--dark);\
+      color: var(--cream);\
+      overflow-x: hidden;\
+    \}\
+\
+    /* \uc0\u9472 \u9472  NAV \u9472 \u9472  */\
+    nav \{\
+      position: fixed; top: 0; width: 100%; z-index: 100;\
+      display: flex; justify-content: space-between; align-items: center;\
+      padding: 18px 60px;\
+      background: rgba(26,16,8,0.85);\
+      backdrop-filter: blur(10px);\
+      border-bottom: 1px solid rgba(201,168,76,0.3);\
+      transition: padding 0.3s;\
+    \}\
+    .logo \{\
+      font-family: 'Playfair Display', serif;\
+      font-size: 1.6rem;\
+      color: var(--gold);\
+      letter-spacing: 2px;\
+    \}\
+    .logo span \{ font-style: italic; color: #fff; \}\
+    nav ul \{ list-style: none; display: flex; gap: 36px; \}\
+    nav ul a \{\
+      text-decoration: none; color: var(--cream);\
+      font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;\
+      transition: color 0.3s;\
+    \}\
+    nav ul a:hover \{ color: var(--gold); \}\
+\
+    /* \uc0\u9472 \u9472  HERO \u9472 \u9472  */\
+    .hero \{\
+      height: 100vh;\
+      background: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80') center/cover no-repeat;\
+      display: flex; flex-direction: column;\
+      justify-content: center; align-items: center;\
+      text-align: center;\
+      position: relative;\
+    \}\
+    .hero::before \{\
+      content: '';\
+      position: absolute; inset: 0;\
+      background: linear-gradient(to bottom, rgba(26,16,8,0.55) 0%, rgba(26,16,8,0.75) 100%);\
+    \}\
+    .hero-content \{ position: relative; z-index: 1; animation: fadeUp 1.2s ease both; \}\
+    .hero-badge \{\
+      display: inline-block;\
+      border: 1px solid var(--gold);\
+      color: var(--gold);\
+      font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase;\
+      padding: 6px 20px; margin-bottom: 24px;\
+      animation: fadeUp 1s 0.2s ease both;\
+    \}\
+    .hero h1 \{\
+      font-family: 'Playfair Display', serif;\
+      font-size: clamp(3rem, 8vw, 7rem);\
+      line-height: 1.05;\
+      color: #fff;\
+      text-shadow: 0 4px 30px rgba(0,0,0,0.5);\
+    \}\
+    .hero h1 em \{ color: var(--gold); font-style: italic; \}\
+    .hero p \{\
+      margin-top: 20px; font-size: 1.1rem; font-weight: 300;\
+      letter-spacing: 3px; color: rgba(255,255,255,0.8);\
+      animation: fadeUp 1s 0.5s ease both;\
+    \}\
+    .hero-btn \{\
+      margin-top: 40px;\
+      display: inline-block;\
+      padding: 16px 44px;\
+      background: var(--gold);\
+      color: var(--dark);\
+      font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;\
+      text-decoration: none; font-weight: 700;\
+      transition: background 0.3s, transform 0.3s;\
+      animation: fadeUp 1s 0.7s ease both;\
+    \}\
+    .hero-btn:hover \{ background: #e0bc6a; transform: translateY(-3px); \}\
+\
+    /* \uc0\u9472 \u9472  SCROLL INDICATOR \u9472 \u9472  */\
+    .scroll-down \{\
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);\
+      z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;\
+      color: rgba(255,255,255,0.5); font-size: 0.7rem; letter-spacing: 3px;\
+      animation: bounce 2s infinite;\
+    \}\
+    .scroll-down::after \{\
+      content: ''; width: 1px; height: 50px;\
+      background: linear-gradient(to bottom, var(--gold), transparent);\
+    \}\
+\
+    /* \uc0\u9472 \u9472  SECTION BASE \u9472 \u9472  */\
+    section \{ padding: 100px 60px; \}\
+    .section-label \{\
+      font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase;\
+      color: var(--gold); margin-bottom: 14px;\
+    \}\
+    .section-title \{\
+      font-family: 'Playfair Display', serif;\
+      font-size: clamp(2rem, 4vw, 3.2rem);\
+      line-height: 1.2;\
+    \}\
+    .divider \{\
+      width: 60px; height: 2px;\
+      background: var(--gold);\
+      margin: 24px 0;\
+    \}\
+\
+    /* \uc0\u9472 \u9472  ABOUT \u9472 \u9472  */\
+    #about \{\
+      background: var(--cream);\
+      color: var(--dark);\
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;\
+    \}\
+    #about img \{\
+      width: 100%; height: 520px; object-fit: cover;\
+      box-shadow: 20px 20px 0 var(--gold);\
+    \}\
+    #about p \{\
+      font-size: 1.05rem; line-height: 1.9; color: #3a2a1a;\
+      margin-bottom: 18px;\
+    \}\
+    .stat-row \{ display: flex; gap: 40px; margin-top: 36px; \}\
+    .stat \{ text-align: center; \}\
+    .stat-num \{\
+      font-family: 'Playfair Display', serif;\
+      font-size: 2.8rem; color: var(--red); font-weight: 700;\
+    \}\
+    .stat-label \{ font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #666; \}\
+\
+    /* \uc0\u9472 \u9472  CUISINE \u9472 \u9472  */\
+    #cuisine \{\
+      background: #120c04;\
+      text-align: center;\
+    \}\
+    #cuisine .section-title \{ color: #fff; \}\
+    #cuisine .intro \{\
+      max-width: 720px; margin: 0 auto 60px;\
+      font-size: 1.05rem; line-height: 1.9; color: rgba(255,255,255,0.7);\
+    \}\
+    .cuisine-grid \{\
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;\
+    \}\
+    .cuisine-card \{\
+      position: relative; overflow: hidden; height: 380px; cursor: pointer;\
+    \}\
+    .cuisine-card img \{\
+      width: 100%; height: 100%; object-fit: cover;\
+      transition: transform 0.6s ease;\
+    \}\
+    .cuisine-card:hover img \{ transform: scale(1.08); \}\
+    .cuisine-card-overlay \{\
+      position: absolute; inset: 0;\
+      background: linear-gradient(to top, rgba(26,16,8,0.9) 0%, transparent 60%);\
+      display: flex; flex-direction: column;\
+      justify-content: flex-end; padding: 28px;\
+      text-align: left;\
+    \}\
+    .cuisine-card h3 \{\
+      font-family: 'Playfair Display', serif;\
+      font-size: 1.4rem; color: #fff; margin-bottom: 6px;\
+    \}\
+    .cuisine-card p \{ font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.6; \}\
+\
+    /* \uc0\u9472 \u9472  MENU HIGHLIGHT \u9472 \u9472  */\
+    #menu \{\
+      background: var(--cream); color: var(--dark);\
+      text-align: center;\
+    \}\
+    .menu-grid \{\
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;\
+      margin-top: 60px; border: 1px solid #e0d0b8;\
+    \}\
+    .menu-item \{\
+      padding: 36px 40px;\
+      border-bottom: 1px solid #e0d0b8;\
+      border-right: 1px solid #e0d0b8;\
+      text-align: left;\
+      transition: background 0.3s;\
+    \}\
+    .menu-item:hover \{ background: #fdf0dc; \}\
+    .menu-item:nth-child(even) \{ border-right: none; \}\
+    .menu-item-top \{ display: flex; justify-content: space-between; align-items: baseline; \}\
+    .menu-item h3 \{\
+      font-family: 'Playfair Display', serif;\
+      font-size: 1.2rem; color: var(--dark);\
+    \}\
+    .menu-price \{\
+      font-family: 'Playfair Display', serif;\
+      font-size: 1.1rem; color: var(--red); font-weight: 700;\
+    \}\
+    .menu-item p \{ margin-top: 8px; font-size: 0.88rem; color: #666; line-height: 1.6; \}\
+    .menu-tag \{\
+      display: inline-block; margin-top: 10px;\
+      font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;\
+      padding: 3px 10px; border: 1px solid var(--gold); color: var(--gold);\
+    \}\
+\
+    /* \uc0\u9472 \u9472  GALLERY \u9472 \u9472  */\
+    #gallery \{ background: var(--dark); padding: 80px 0; \}\
+    #gallery .inner \{ padding: 0 60px; margin-bottom: 40px; \}\
+    .gallery-strip \{\
+      display: flex; gap: 4px; overflow-x: auto;\
+      padding: 0 60px 20px;\
+      scrollbar-width: thin; scrollbar-color: var(--gold) transparent;\
+    \}\
+    .gallery-strip img \{\
+      height: 300px; width: auto; flex-shrink: 0;\
+      object-fit: cover;\
+      transition: filter 0.3s, transform 0.3s;\
+      filter: brightness(0.8);\
+    \}\
+    .gallery-strip img:hover \{ filter: brightness(1); transform: scale(1.02); \}\
+\
+    /* \uc0\u9472 \u9472  QUOTE \u9472 \u9472  */\
+    .quote-section \{\
+      background: var(--red);\
+      padding: 80px 60px;\
+      text-align: center;\
+    \}\
+    .quote-section blockquote \{\
+      font-family: 'Playfair Display', serif;\
+      font-size: clamp(1.4rem, 3vw, 2.2rem);\
+      font-style: italic;\
+      color: #fff;\
+      max-width: 800px; margin: 0 auto;\
+      line-height: 1.6;\
+    \}\
+    .quote-section cite \{\
+      display: block; margin-top: 20px;\
+      font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;\
+      color: rgba(255,255,255,0.6); font-style: normal;\
+    \}\
+\
+    /* \uc0\u9472 \u9472  RESERVATION \u9472 \u9472  */\
+    #reservation \{\
+      background: #120c04;\
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;\
+    \}\
+    #reservation img \{\
+      width: 100%; height: 500px; object-fit: cover;\
+      filter: brightness(0.75);\
+    \}\
+    .res-form \{ \}\
+    .res-form .section-title \{ color: #fff; \}\
+    .form-row \{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 30px; \}\
+    .form-group \{ display: flex; flex-direction: column; gap: 8px; \}\
+    .form-group label \{ font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); \}\
+    .form-group input, .form-group select \{\
+      background: rgba(255,255,255,0.06);\
+      border: 1px solid rgba(201,168,76,0.3);\
+      color: #fff; padding: 12px 16px;\
+      font-family: 'Lato', sans-serif; font-size: 0.9rem;\
+      outline: none; transition: border 0.3s;\
+    \}\
+    .form-group input:focus, .form-group select:focus \{ border-color: var(--gold); \}\
+    .form-group select option \{ background: #1a1008; \}\
+    .submit-btn \{\
+      margin-top: 24px; width: 100%;\
+      padding: 16px; background: var(--gold);\
+      color: var(--dark); font-weight: 700;\
+      font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;\
+      border: none; cursor: pointer;\
+      transition: background 0.3s, transform 0.2s;\
+    \}\
+    .submit-btn:hover \{ background: #e0bc6a; transform: translateY(-2px); \}\
+\
+    /* \uc0\u9472 \u9472  FOOTER \u9472 \u9472  */\
+    footer \{\
+      background: #0d0804;\
+      padding: 60px;\
+      display: grid; grid-template-columns: 2fr 1fr 1fr;\
+      gap: 60px; border-top: 1px solid rgba(201,168,76,0.2);\
+    \}\
+    .footer-logo \{\
+      font-family: 'Playfair Display', serif;\
+      font-size: 2rem; color: var(--gold); margin-bottom: 16px;\
+    \}\
+    footer p \{ font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.8; \}\
+    footer h4 \{\
+      font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;\
+      color: var(--gold); margin-bottom: 20px;\
+    \}\
+    footer ul \{ list-style: none; \}\
+    footer ul li \{ margin-bottom: 10px; \}\
+    footer ul li a \{\
+      text-decoration: none; color: rgba(255,255,255,0.5);\
+      font-size: 0.88rem; transition: color 0.3s;\
+    \}\
+    footer ul li a:hover \{ color: var(--gold); \}\
+    .footer-bottom \{\
+      background: #0d0804;\
+      text-align: center; padding: 20px;\
+      font-size: 0.75rem; color: rgba(255,255,255,0.25);\
+      border-top: 1px solid rgba(255,255,255,0.05);\
+    \}\
+\
+    /* \uc0\u9472 \u9472  ANIMATIONS \u9472 \u9472  */\
+    @keyframes fadeUp \{\
+      from \{ opacity: 0; transform: translateY(30px); \}\
+      to   \{ opacity: 1; transform: translateY(0); \}\
+    \}\
+    @keyframes bounce \{\
+      0%, 100% \{ transform: translateX(-50%) translateY(0); \}\
+      50%       \{ transform: translateX(-50%) translateY(10px); \}\
+    \}\
+\
+    .reveal \{\
+      opacity: 0; transform: translateY(40px);\
+      transition: opacity 0.8s ease, transform 0.8s ease;\
+    \}\
+    .reveal.visible \{ opacity: 1; transform: translateY(0); \}\
+\
+    /* \uc0\u9472 \u9472  RESPONSIVE \u9472 \u9472  */\
+    @media (max-width: 900px) \{\
+      nav \{ padding: 16px 24px; \}\
+      nav ul \{ display: none; \}\
+      section \{ padding: 70px 24px; \}\
+      #about, #reservation \{ grid-template-columns: 1fr; gap: 40px; \}\
+      .cuisine-grid \{ grid-template-columns: 1fr; \}\
+      .menu-grid \{ grid-template-columns: 1fr; \}\
+      footer \{ grid-template-columns: 1fr; gap: 30px; \}\
+      .form-row \{ grid-template-columns: 1fr; \}\
+    \}\
+  </style>\
+</head>\
+<body>\
+\
+<!-- NAV -->\
+<nav>\
+  <div class="logo">La <span>Stella</span> d'Oro</div>\
+  <ul>\
+    <li><a href="#about">Storia</a></li>\
+    <li><a href="#cuisine">Cucina</a></li>\
+    <li><a href="#menu">Menu</a></li>\
+    <li><a href="#gallery">Galleria</a></li>\
+    <li><a href="#reservation">Prenotazione</a></li>\
+  </ul>\
+</nav>\
+\
+<!-- HERO -->\
+<section class="hero">\
+  <div class="hero-content">\
+    <div class="hero-badge">Ristorante Italiano \'b7 Dal 1834</div>\
+    <h1>La <em>Stella</em><br>d'Oro</h1>\
+    <p>Roma \'b7 Via della Tradizione, 12</p>\
+    <a href="#reservation" class="hero-btn">Prenota un Tavolo</a>\
+  </div>\
+  <div class="scroll-down">Scorri</div>\
+</section>\
+\
+<!-- ABOUT -->\
+<section id="about">\
+  <div class="reveal">\
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Ristorante interno"/>\
+  </div>\
+  <div class="reveal">\
+    <p class="section-label">La Nostra Storia</p>\
+    <h2 class="section-title">Quasi Due Secoli<br>di Sapori Autentici</h2>\
+    <div class="divider"></div>\
+    <p>\
+      Fondato nel <strong>1834</strong> da Salvatore Conti, un cuoco napoletano innamorato della semplicit\'e0,\
+      <em>La Stella d'Oro</em> \'e8 sopravvissuto a guerre, rivoluzioni e al passare del tempo\
+      senza mai tradire la sua anima: ingredienti freschi, ricette di famiglia e un'ospitalit\'e0\
+      che fa sentire ogni ospite a casa propria.\
+    </p>\
+    <p>\
+      Oggi, alla sesta generazione della famiglia Conti, il ristorante continua a servire\
+      gli stessi piatti che hanno fatto innamorare generazioni di romani e viaggiatori\
+      da tutto il mondo. La nostra cucina non segue le mode \'97 <em>\'e8 la moda che segue noi</em>.\
+    </p>\
+    <div class="stat-row">\
+      <div class="stat">\
+        <div class="stat-num">190+</div>\
+        <div class="stat-label">Anni di storia</div>\
+      </div>\
+      <div class="stat">\
+        <div class="stat-num">6\'aa</div>\
+        <div class="stat-label">Generazione</div>\
+      </div>\
+      <div class="stat">\
+        <div class="stat-num">47</div>\
+        <div class="stat-label">Ricette originali</div>\
+      </div>\
+    </div>\
+  </div>\
+</section>\
+\
+<!-- CUISINE -->\
+<section id="cuisine">\
+  <p class="section-label reveal">La Cucina Italiana</p>\
+  <h2 class="section-title reveal">Un Patrimonio dell'Umanit\'e0</h2>\
+  <p class="intro reveal">\
+    La cucina italiana \'e8 molto pi\'f9 di un insieme di ricette \'97 \'e8 una filosofia di vita.\
+    Nata dalla terra, plasmata dal sole del Mediterraneo e affinata da secoli di tradizione,\
+    essa celebra la qualit\'e0 degli ingredienti sopra ogni tecnica. Ogni regione racconta\
+    una storia diversa: la pasta fresca dell'Emilia, il pesce della Sicilia, i tartufi\
+    dell'Umbria. Da noi troverete tutto questo in un solo luogo.\
+  </p>\
+  <div class="cuisine-grid reveal">\
+    <div class="cuisine-card">\
+      <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=700&q=80" alt="Pasta"/>\
+      <div class="cuisine-card-overlay">\
+        <h3>Pasta Fresca</h3>\
+        <p>Impastata ogni mattina con farina di semola e uova di campagna.</p>\
+      </div>\
+    </div>\
+    <div class="cuisine-card">\
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=700&q=80" alt="Pizza"/>\
+      <div class="cuisine-card-overlay">\
+        <h3>Pizza Napoletana</h3>\
+        <p>Forno a legna, impasto a lunga lievitazione, pomodoro San Marzano.</p>\
+      </div>\
+    </div>\
+    <div class="cuisine-card">\
+      <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=700&q=80" alt="Dolci"/>\
+      <div class="cuisine-card-overlay">\
+        <h3>Dolci Tradizionali</h3>\
+        <p>Tiramis\'f9, panna cotta e cannoli preparati secondo le ricette originali.</p>\
+      </div>\
+    </div>\
+  </div>\
+</section>\
+\
+<!-- MENU -->\
+<section id="menu">\
+  <p class="section-label reveal">Il Nostro Menu</p>\
+  <h2 class="section-title reveal">Piatti della Casa</h2>\
+  <div class="divider" style="margin: 24px auto;"></div>\
+  <div class="menu-grid reveal">\
+    <div class="menu-item">\
+      <div class="menu-item-top">\
+        <h3>Cacio e Pepe</h3>\
+        <span class="menu-price">\'8018</span>\
+      </div>\
+      <p>Tonnarelli artigianali, pecorino romano DOP, pepe nero macinato al momento.</p>\
+      <span class="menu-tag">Signature</span>\
+    </div>\
+    <div class="menu-item">\
+      <div class="menu-item-top">\
+        <h3>Ossobuco alla Milanese</h3>\
+        <span class="menu-price">\'8032</span>\
+      </div>\
+      <p>Stinco di vitello brasato, gremolata, risotto allo zafferano.</p>\
+      <span class="menu-tag">Dal 1834</span>\
+    </div>\
+    <div class="menu-item">\
+      <div class="menu-item-top">\
+        <h3>Branzino al Sale</h3>\
+        <span class="menu-price">\'8028</span>\
+      </div>\
+      <p>Branzino intero cotto in crosta di sale marino, olio extravergine, limone di Amalfi.</p>\
+      <span class="menu-tag">Stagionale</span>\
+    </div>\
+    <div class="menu-item">\
+      <div class="menu-item-top">\
+        <h3>Tiramis\'f9 della Nonna</h3>\
+        <span class="menu-price">\'8010</span>\
+      </div>\
+      <p>La ricetta originale di Nonna Lucia: savoiardi, mascarpone, caff\'e8 espresso e marsala.</p>\
+      <span class="menu-tag">Classico</span>\
+    </div>\
+    <div class="menu-item">\
+      <div class="menu-item-top">\
+        <h3>Tagliere di Salumi</h3>\
+        <span class="menu-price">\'8022</span>\
+      </div>\
+      <p>Prosciutto di Parma 24 mesi, mortadella di Bologna, salame toscano, focaccia calda.</p>\
+    </div>\
+    <div class="menu-item">\
+      <div class="menu-item-top">\
+        <h3>Risotto al Tartufo Nero</h3>\
+        <span class="menu-price">\'8036</span>\
+      </div>\
+      <p>Riso Carnaroli, tartufo nero di Norcia, burro di malga, parmigiano 36 mesi.</p>\
+      <span class="menu-tag">Chef's Choice</span>\
+    </div>\
+  </div>\
+</section>\
+\
+<!-- GALLERY -->\
+<section id="gallery">\
+  <div class="inner">\
+    <p class="section-label reveal">Galleria</p>\
+    <h2 class="section-title reveal">Atmosfera & Sapori</h2>\
+  </div>\
+  <div class="gallery-strip reveal">\
+    <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=500&q=80" alt="Interno"/>\
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&q=80" alt="Piatto"/>\
+    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=500&q=80" alt="Vino"/>\
+    <img src="https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=500&q=80" alt="Pasta"/>\
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&q=80" alt="Ristorante"/>\
+    <img src="https://images.unsplash.com/photo-1551183053-bf91798d047e?w=500&q=80" alt="Chef"/>\
+  </div>\
+</section>\
+\
+<!-- QUOTE -->\
+<div class="quote-section reveal">\
+  <blockquote>\
+    "La cucina \'e8 l'arte pi\'f9 antica del mondo \'97 e la pi\'f9 sincera.<br>\
+    Non mente mai: o \'e8 buona, o non lo \'e8."\
+  </blockquote>\
+  <cite>\'97 Chef Marco Conti, VI Generazione</cite>\
+</div>\
+\
+<!-- RESERVATION -->\
+<section id="reservation">\
+  <div class="reveal">\
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Sala del ristorante"/>\
+  </div>\
+  <div class="res-form reveal">\
+    <p class="section-label">Prenota</p>\
+    <h2 class="section-title">Riserva il Tuo Tavolo</h2>\
+    <div class="divider"></div>\
+    <div class="form-row">\
+      <div class="form-group">\
+        <label>Nome</label>\
+        <input type="text" placeholder="Il tuo nome"/>\
+      </div>\
+      <div class="form-group">\
+        <label>Cognome</label>\
+        <input type="text" placeholder="Il tuo cognome"/>\
+      </div>\
+      <div class="form-group">\
+        <label>Data</label>\
+        <input type="date"/>\
+      </div>\
+      <div class="form-group">\
+        <label>Ora</label>\
+        <select>\
+          <option>19:00</option>\
+          <option>19:30</option>\
+          <option>20:00</option>\
+          <option>20:30</option>\
+          <option>21:00</option>\
+          <option>21:30</option>\
+        </select>\
+      </div>\
+      <div class="form-group">\
+        <label>Ospiti</label>\
+        <select>\
+          <option>1 persona</option>\
+          <option>2 persone</option>\
+          <option>3 persone</option>\
+          <option>4 persone</option>\
+          <option>5+ persone</option>\
+        </select>\
+      </div>\
+      <div class="form-group">\
+        <label>Telefono</label>\
+        <input type="tel" placeholder="+39 06 ..."/>\
+      </div>\
+    </div>\
+    <button class="submit-btn" onclick="alert('Grazie! La tua prenotazione \'e8 stata ricevuta. Vi aspettiamo! \uc0\u55356 \u57207 ')">\
+      Conferma Prenotazione\
+    </button>\
+  </div>\
+</section>\
+\
+<!-- FOOTER -->\
+<footer>\
+  <div>\
+    <div class="footer-logo">La Stella d'Oro</div>\
+    <p>Via della Tradizione, 12<br>00186 Roma, Italia<br><br>\
+    Tel: +39 06 1234 5678<br>\
+    info@lastelladoro.it</p>\
+  </div>\
+  <div>\
+    <h4>Orari</h4>\
+    <ul>\
+      <li><a href="#">Lun \'96 Ven: 12:00 \'96 15:00</a></li>\
+      <li><a href="#">Lun \'96 Ven: 19:00 \'96 23:00</a></li>\
+      <li><a href="#">Sab \'96 Dom: 12:00 \'96 23:30</a></li>\
+    </ul>\
+  </div>\
+  <div>\
+    <h4>Navigazione</h4>\
+    <ul>\
+      <li><a href="#about">La Nostra Storia</a></li>\
+      <li><a href="#cuisine">La Cucina</a></li>\
+      <li><a href="#menu">Il Menu</a></li>\
+      <li><a href="#gallery">Galleria</a></li>\
+      <li><a href="#reservation">Prenotazioni</a></li>\
+    </ul>\
+  </div>\
+</footer>\
+<div class="footer-bottom">\
+  \'a9 2024 La Stella d'Oro \'b7 Ristorante Italiano dal 1834 \'b7 Roma, Italia\
+</div>\
+\
+<script>\
+  // Scroll reveal\
+  const reveals = document.querySelectorAll('.reveal');\
+  const observer = new IntersectionObserver((entries) => \{\
+    entries.forEach((e, i) => \{\
+      if (e.isIntersecting) \{\
+        setTimeout(() => e.target.classList.add('visible'), i * 100);\
+      \}\
+    \});\
+  \}, \{ threshold: 0.12 \});\
+  reveals.forEach(el => observer.observe(el));\
+\
+  // Nav shrink on scroll\
+  window.addEventListener('scroll', () => \{\
+    const nav = document.querySelector('nav');\
+    nav.style.padding = window.scrollY > 60 ? '10px 60px' : '18px 60px';\
+  \});\
+</script>\
+</body>\
+</html>}
